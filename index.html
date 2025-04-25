@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #1a1a1a;
+        color: white;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      /* Typing text with better positioning and animation */
+      .typing-text {
+        position: fixed;
+        left: 30%;
+        top: 15%;
+        text-align: left;
+        display: inline-block;
+        white-space: pre-wrap;
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 8px; /* Width of the cursor */
+        height: 1em; /* Match text height */
+        background-color: white;
+        margin-left: 2px;
+        animation: blinkCursor 0.6s infinite;
+      }
+
+      @keyframes blinkCursor {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* Bottom text styling - more modern look */
+      .bottom-text {
+        position: fixed;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(160, 160, 160, 0.8);
+        color: rgb(255, 255, 255);
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: ease-out;
+      }
+
+      /* This class makes bottom text appear smoothly */
+      .show {
+        opacity: 100%;
+      }
+
+      /* Additional element positioning */
+      /* Initially hide the GIF container until typing is done */
+      .to {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        display: none; /* Will be shown via JavaScript */
+      }
+
+      /* Make the image responsive but with minimum dimensions */
+      .to img {
+        width: 100%;
+        max-width: 300px;
+        min-width: 200px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        border: 2px solid #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p id="typing-text" class="typing-text"></p>
+      <span class="cursor" id="cursor" style="display: none">|</span>
+    </div>
+    <div id="bottom-text" class="bottom-text">
+      <a href="home.html">I will</a>
+    </div>
+    <div id="to" class="to">
+      <img
+        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnNsZmMxMncwYnc0dXE2ZXZieDB1NzZ1cnl5ZjBjcGRqNnZ1YnMweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26AHPxxnSw1L9T1rW/giphy.gif"
+      />
+    </div>
+  </body>
+</html>
